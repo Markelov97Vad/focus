@@ -1,1 +1,4 @@
-/styles/scss
+node_modules
+.vscode
+DS_Store
+dist

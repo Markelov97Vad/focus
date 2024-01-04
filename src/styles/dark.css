@@ -10,7 +10,7 @@
   --main-text-color: #f1b2ce;
   --title-color: #db00ff;
   --title-shadow: #ff0070;
-  --hover-color: 1px solid rgba(255, 0, 112, 0.4);
+  --hover-color: 1px solid rgb(255 0 112 / 0.4);
   --background-color: #000028;
   --background-image: url(../images/cover-image-dark.png);
   --article-title-color: var(--background-color);

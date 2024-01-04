@@ -10,11 +10,12 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   :root {
     --main-text-color: #f1b2ce;
     --title-color: #db00ff;
     --title-shadow: #ff0070;
-    --hover-color: 1px solid rgba(255, 0, 112, 0.4);
+    --hover-color: 1px solid rgb(255 0 112 / 0.4);
     --background-color: #000028;
     --background-image: url(../images/cover-image-dark.png);
     --article-title-color: var(--background-color);
@@ -28,12 +29,13 @@
 }
 
 @media (prefers-color-scheme: light) {
+
   :root {
     --main-text-color: #353430;
     --title-color: #ffc2e6;
     --title-shadow: #ff0070;
     --title-decor: #ff8dcb;
-    --hover-color: 1px solid rgba(50, 49, 45, 0.4);
+    --hover-color: 1px solid rgb(50 49 45 / 0.4);
     --background-color: #fff1f7;
     --background-image: url(../images/cover-image-light.png);
     --article-title-color: var(--main-text-color);
