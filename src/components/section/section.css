@@ -1,0 +1,223 @@
+.section {
+  line-height: 130%;
+}
+
+.section__title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--section-title-color);
+}
+
+@media (width < 1024px) and (width >= 768px) {
+
+  .section__title {
+    width: 35%;
+  }
+}
+
+@media (width < 768px) and (width >= 375px) {
+
+  .section__title {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.section__article-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section__article-list-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--article-title-color);
+}
+
+.section__article-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.section__article-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--article-title-color);
+}
+
+.section__article-title_regular {
+  font-weight: 400;
+}
+
+.section__article-text-link {
+  border: transparent;
+  text-shadow: 3px 3px 0 var(--link-shadow);
+  transition-duration: var(--transition-duration);
+}
+
+.section__article-text-link:hover {
+  border-bottom: 1px solid var(--main-text-color);
+}
+
+.section__article-text-link:focus {
+  outline: none;
+}
+
+.section__article-text-link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+}
+
+.section:first-of-type,
+.section:nth-of-type(3) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section:first-of-type .section__title,
+.section:nth-of-type(3) .section__title {
+  flex: 0 0 auto;
+  width: 33%;
+}
+
+@media (width < 1024px) and (width >= 768px) {
+
+  .section:first-of-type .section__title,
+  .section:nth-of-type(3) .section__title {
+    width: 32%;
+  }
+}
+
+@media (width < 768px) and (width >= 375px) {
+
+  .section:first-of-type .section__title,
+  .section:nth-of-type(3) .section__title {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.section:first-of-type .section__article-list,
+.section:nth-of-type(3) .section__article-list {
+  flex: 0 0 auto;
+  width: 66%;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (width < 1024px) and (width >= 768px) {
+
+  .section:first-of-type .section__article-list,
+  .section:nth-of-type(3) .section__article-list {
+    width: 65%;
+  }
+}
+
+@media (width < 768px) and (width >= 375px) {
+
+  .section:first-of-type .section__article-list,
+  .section:nth-of-type(3) .section__article-list {
+    width: 100%;
+  }
+}
+
+.section:nth-of-type(2) .section__title {
+  width: 30%;
+}
+
+@media (width < 768px) and (width >= 375px) {
+
+  .section:nth-of-type(2) .section__title {
+    width: 100%;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .section:nth-of-type(2) .section__article-list {
+    justify-content: space-between;
+  }
+}
+
+@media (width < 1024px) and (width >= 375px) {
+
+  .section:nth-of-type(2) .section__article-list {
+    gap: 20px;
+  }
+}
+
+.section:nth-of-type(2) .section__article-item {
+  flex: 0 0 auto;
+  width: 32%;
+}
+
+@media (width < 1024px) and (width >= 375px) {
+
+  .section:nth-of-type(2) .section__article-item {
+    flex: 1 0 auto;
+    width: 100%;
+  }
+}
+
+.section:last-of-type {
+  display: grid;
+}
+
+.section:last-of-type .section__title {
+  grid-column: 1/-1;
+  width: 100%;
+  margin: 0;
+}
+
+@media (width >= 768px) {
+
+  .section:last-of-type .section__image {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .section:last-of-type .section__image:first-of-type,
+  .section:last-of-type .section__image:last-of-type {
+    grid-column: span 2;
+  }
+
+  .section:last-of-type .section__image:nth-of-type(2),
+  .section:last-of-type .section__image:nth-of-type(3) {
+    grid-row: span 2;
+  }
+}
+
+@media (width < 768px) {
+
+  .section:last-of-type .section__image {
+    width: 100%;
+    height: auto;
+  }
+
+  .section:last-of-type .section__image-container {
+    width: 100px;
+  }
+}
+
+@media (width >= 768px) {
+
+  .section:last-of-type {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 19px;
+  }
+}
+
+@media (width < 768px) {
+
+  .section:last-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

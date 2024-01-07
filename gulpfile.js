@@ -1,5 +1,8 @@
 const gulp = require('gulp');
-const concat = require('gulp-concat-css');
+const concatCss = require('gulp-concat-css');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify-es').default;
+const babel = require('gulp-babel');
 const plumber = require('gulp-plumber');
 const del = require('del');
 const browserSync = require('browser-sync').create();
@@ -9,6 +12,7 @@ const mediaquery = require('postcss-combine-media-query');
 const cssnano = require('cssnano');
 const htmlMinify = require('html-minifier');
 const imagemin = require('gulp-imagemin');
+const map = require('gulp-sourcemaps');
 
 const gulpPug = require('gulp-pug');
 
@@ -22,16 +26,18 @@ const gulpPug = require('gulp-pug');
  * выполнение в парраллельном режиме build и watchFiles
  * cледит за файлами в src/ и делает пересборку после каждого изменения этих файлови, также перезагружает страницу в браузере
  */
-const build = gulp.series(clean, gulp.parallel(pug, css, images));
+const build = gulp.series(clean, gulp.parallel(pug, css, images, fonts, scripts));
 const watchapp = gulp.parallel(build, watchFiles, serve);
 
 const pathConfig = {
   html: 'src/**/*.html',
   css: 'src/**/*.css',
+  fonts: 'src/fonts/**/*.{woff,woff2}',
   image: 'src/images/**/*.{jpg,png,svg,gif,ico,webp,avif}',
   build: './dist',
   styleFile: 'styles.css',
-  pug: 'src/pages/**/*.pug'
+  pug: 'src/pages/**/*.pug',
+  js: 'src/scripts/**/*.js'
 } 
 
 function html() {
@@ -66,10 +72,30 @@ function css() {
   ];
   return gulp.src(pathConfig.css)
         .pipe(plumber())
-        .pipe(concat(pathConfig.styleFile)) // объединение css в один файл
+        .pipe(concatCss(pathConfig.styleFile)) // объединение css в один файл
         .pipe(postcss(plugins))
         .pipe(gulp.dest('dist/'))
         .pipe(browserSync.reload({stream: true}))
+}
+
+function fonts() {
+  return gulp.src(pathConfig.fonts)
+          .pipe(plumber())
+          .pipe(gulp.dest('dist/fonts'))
+          .pipe(browserSync.reload({stream: true}))
+}
+
+function scripts() {
+	return gulp.src(pathConfig.js, {
+      sourcemaps: true
+    })
+    .pipe(babel())
+		// .pipe(map.init())
+		.pipe(uglify())
+		.pipe(concat('main.min.js'))
+		// .pipe(map.write('../sourcemaps'))
+		.pipe(gulp.dest('dist/js/'))
+    .pipe(browserSync.reload({stream: true}))
 }
 
 function images() {
@@ -101,10 +127,12 @@ function clean() { // очистка паки dist
 }
 
 function watchFiles() { // отслеживание изменения в файлах
-  gulp.watch([pathConfig.pug], pug);
+  // gulp.watch([pathConfig.pug], pug);
+  gulp.watch(['src/**/*.pug'], pug);
   gulp.watch([pathConfig.html], html);
   gulp.watch([pathConfig.css], css);
   gulp.watch([pathConfig.image], images);
+  gulp.watch([pathConfig.js], scripts);
 }
 
 function serve() { // 
@@ -128,6 +156,7 @@ exports.css = css; // для вызыва функции в командной �
 exports.images = images; 
 exports.html = html;
 exports.pug = pug;
+exports.scripts = scripts;
 exports.clean = clean;
 exports.build = build;
 exports.watchapp = watchapp;
