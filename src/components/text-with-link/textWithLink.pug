@@ -1,0 +1,4 @@
+mixin textWithLink(textFirst, link, textLink, textSecond)
+  p.section__article-text.
+    = textFirst#[a.section__article-text-link(href=link, target="_blank")]= textLink
+    = textSecond

@@ -37,8 +37,7 @@ function initTheme() {
       btn.removeAttribute('disabled');
     });
     document
-      .querySelector(`.header__theme-menu-button_type_${theme}`)
-      .classList.add('header__theme-menu-button_active');
+      .querySelector(`.header__theme-menu-button_type_${theme}`).classList.add('header__theme-menu-button_active');
     document
       .querySelector(`.header__theme-menu-button_type_${theme}`)
       .setAttribute('disabled', true);

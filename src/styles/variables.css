@@ -1,11 +1,11 @@
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 
 /*
   Переменные для проекта
   и их переопределение под различные устройства
 */
 
-:root {
+/* :root {
   --font-family: "IBM Plex mono";
 }
 
@@ -45,4 +45,4 @@
     --link-shadow: var(--title-color);
     --rec-color: var(--background-color);
   }
-}
+} */

@@ -6,7 +6,7 @@
   переключая тему
 */
 
-.page.theme_dark {
+/* .page.theme_dark {
   --main-text-color: #f1b2ce;
   --title-color: #db00ff;
   --title-shadow: #ff0070;
@@ -20,4 +20,4 @@
   --title-decor: var(--title-shadow);
   --link-shadow: var(--title-shadow);
   --rec-color: var(--title-shadow);
-}
+} */

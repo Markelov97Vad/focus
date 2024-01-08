@@ -1,0 +1,19 @@
+mixin card(title, text, type)
+  article.section__article-item
+    if type === 'regular'
+      h3.section__article-title.section__article-title_regular.title-decor= title
+      p.section__article-text= text
+    else
+      h3.section__article-title.title-decor= title
+      p.section__article-text= text
+mixin cardWithLink(title, textLink, type)
+  article.section__article-item
+    if type === 'regular'
+      h3.section__article-title.section__article-title_regular.title-decor= title
+      p.section__article-text !{textLink}
+    else
+      h3.section__article-title.title-decor= title
+      p.section__article-text !{textLink}
+mixin cardImage(image, alt)
+  img.section__image(src=image, alt=alt, loading="lazy")
+      

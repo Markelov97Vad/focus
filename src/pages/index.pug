@@ -1,5 +1,11 @@
 extends ../layouts/default
 
+block variables
+  - var title = 'in focus'
+  //- - var cardsData = [
+  //-   {'title': 'Дофамин', 'text': 'Text'}
+  //- ]
 block content
   main.main
     include ../components/section/section
+      block section
