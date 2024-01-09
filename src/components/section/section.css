@@ -10,14 +10,12 @@
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .section__title {
     width: 35%;
   }
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .section__title {
     width: 100%;
     margin-bottom: 20px;
@@ -83,7 +81,6 @@
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .section:first-of-type .section__title,
   .section:nth-of-type(3) .section__title {
     width: 32%;
@@ -91,7 +88,6 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .section:first-of-type .section__title,
   .section:nth-of-type(3) .section__title {
     width: 100%;
@@ -108,7 +104,6 @@
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .section:first-of-type .section__article-list,
   .section:nth-of-type(3) .section__article-list {
     width: 65%;
@@ -116,7 +111,6 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .section:first-of-type .section__article-list,
   .section:nth-of-type(3) .section__article-list {
     width: 100%;
@@ -128,21 +122,18 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .section:nth-of-type(2) .section__title {
     width: 100%;
   }
 }
 
 @media (width >= 1024px) {
-
   .section:nth-of-type(2) .section__article-list {
     justify-content: space-between;
   }
 }
 
 @media (width < 1024px) and (width >= 375px) {
-
   .section:nth-of-type(2) .section__article-list {
     gap: 20px;
   }
@@ -154,7 +145,6 @@
 }
 
 @media (width < 1024px) and (width >= 375px) {
-
   .section:nth-of-type(2) .section__article-item {
     flex: 1 0 auto;
     width: 100%;
@@ -172,7 +162,6 @@
 }
 
 @media (width >= 768px) {
-
   .section:last-of-type .section__image {
     -o-object-fit: cover;
     object-fit: cover;
@@ -194,7 +183,6 @@
 }
 
 @media (width < 768px) {
-
   .section:last-of-type .section__image {
     width: 100%;
     height: auto;
@@ -206,7 +194,6 @@
 }
 
 @media (width >= 768px) {
-
   .section:last-of-type {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 19px;
@@ -214,7 +201,6 @@
 }
 
 @media (width < 768px) {
-
   .section:last-of-type {
     display: flex;
     flex-direction: column;

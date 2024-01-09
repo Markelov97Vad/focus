@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@babel/core": "^7.23.7",
+    "@prettier/plugin-pug": "^3.0.0",
     "autoprefixer": "^10.4.16",
     "browser-sync": "^3.0.2",
     "cssnano": "^6.0.3",
@@ -21,8 +23,7 @@
     "prettier": "^3.1.1",
     "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-selector-bem-pattern": "^3.0.1",
-    "@babel/core": "^7.23.7"
+    "stylelint-selector-bem-pattern": "^3.0.1"
   },
   "name": "focus",
   "description": "",
@@ -30,8 +31,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo 'Привет!'",
-    "check": "prettier --check './src/**/*.{html,css,js}'",
-    "format": "prettier --write './src/**/*.{html,css,js}'",
+    "check": "prettier --check './src/**/*.{pug,css,js}'",
+    "format": "prettier --write './src/**/*.{pug,css,js}'",
     "lint": "stylelint './src/**/*.css'",
     "lintfix": "stylelint './src/**/*.css' --fix",
     "checkAll": "npm run check && npm run lint",

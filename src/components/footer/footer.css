@@ -12,28 +12,24 @@
 }
 
 @media (width < 1024px) and (width >= 375px) {
-
   .footer__title {
     text-shadow: 2px 2px 0 var(--title-decor);
   }
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .footer {
     padding: 434px 20px;
   }
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .footer {
     margin-top: 40px;
     padding: 262px 10px;

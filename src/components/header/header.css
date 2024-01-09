@@ -4,7 +4,6 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .header {
     padding: 0 10px;
   }
@@ -19,7 +18,6 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .header__rec {
     top: 11px;
     right: 39px;
@@ -50,7 +48,6 @@
 }
 
 @media (width < 1024px) {
-
   .header__theme-menu-list {
     flex-direction: column;
     align-items: flex-end;
@@ -58,7 +55,6 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .header__theme-menu-list {
     gap: 11px;
   }
@@ -93,14 +89,12 @@
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .header__theme-menu {
     padding-top: 190px;
   }
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .header__theme-menu {
     padding-top: 75px;
   }
@@ -122,7 +116,6 @@
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .header__title-container {
     padding: 150px 0 183px;
     gap: 133px;
@@ -130,7 +123,6 @@
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .header__title-container {
     padding: 70px 0 74px;
     gap: 57px;
@@ -138,21 +130,18 @@
 }
 
 @media (width < 1024px) and (width >= 375px) {
-
   .header__title {
     text-shadow: 4px 4px 0 var(--title-decor);
   }
 }
 
 @media (width < 1024px) and (width >= 768px) {
-
   .header__title {
     margin-left: -3%;
   }
 }
 
 @media (width < 768px) and (width >= 375px) {
-
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     margin-left: 0;
@@ -168,7 +157,6 @@
 }
 
 @media (width < 425px) {
-
   .header__subtitle {
     width: 100%;
   }
