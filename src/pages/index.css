@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/*
+  Переменные для проекта
+  и их переопределение под различные устройства
+*/
+
+:root {
+  --font-family: 'IBM Plex mono';
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --main-text-color: #f1b2ce;
+    --title-color: #db00ff;
+    --title-shadow: #ff0070;
+    --hover-color: 1px solid rgb(255 0 112 / 0.4);
+    --background-color: #000028;
+    --background-image: url(../../images/cover-image-dark.png);
+    --article-title-color: var(--background-color);
+    --section-title-color: var(--title-shadow);
+    --border-color: var(--main-text-color);
+    --corners-color: var(--title-shadow);
+    --title-decor: var(--title-shadow);
+    --link-shadow: var(--title-shadow);
+    --rec-color: var(--title-shadow);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  :root {
+    --main-text-color: #353430;
+    --title-color: #ffc2e6;
+    --title-shadow: #ff0070;
+    --title-decor: #ff8dcb;
+    --hover-color: 1px solid rgb(50 49 45 / 0.4);
+    --background-color: #fff1f7;
+    --background-image: url(../../images/cover-image-light.png);
+    --article-title-color: var(--main-text-color);
+    --section-title-color: var(--main-text-color);
+    --border-color: var(--title-shadow);
+    --corners-color: var(--main-text-color);
+    --link-shadow: var(--title-color);
+    --rec-color: var(--background-color);
+  }
+}
+/* Page */
+
+.page {
+  --transition-duration: 0.25s;
+
+  background:
+    var(--background-image) no-repeat top center,
+    var(--background-color);
+  background-size: auto 768px;
+  background-attachment: fixed;
+  color: var(--main-text-color);
+  transition-duration: var(--transition-duration);
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--corners-color);
+  border-bottom: 1px solid var(--corners-color);
+  left: 20px;
+  bottom: 20px;
+}
+
+@media (width < 768px) and (width >= 375px) {
+
+  .decorated-zone::before {
+    left: 10px;
+    bottom: 17px;
+  }
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid var(--corners-color);
+  border-top: 1px solid var(--corners-color);
+  right: 20px;
+  top: 20px;
+}
+
+@media (width < 768px) and (width >= 375px) {
+
+  .decorated-zone::after {
+    right: 10px;
+    top: 10px;
+  }
+}
+
+.dark-title {
+  color: var(--article-title-color);
+}
+
+.title-decor {
+  background: var(--title-decor);
+}

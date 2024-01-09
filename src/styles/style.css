@@ -5,14 +5,14 @@
 .page {
   --transition-duration: 0.25s;
 
-  background: var(--background-image) no-repeat top center,
+  background:
+    var(--background-image) no-repeat top center,
     var(--background-color);
   background-size: auto 768px;
   background-attachment: fixed;
   color: var(--main-text-color);
   transition-duration: var(--transition-duration);
 }
-
 
 /* Header */
 
